@@ -37,38 +37,6 @@
     - #HEADER
   -->
   <header class="header">
-    <!--<div class="header-top">
-      <div class="container">
-        <div class="countdown-text">
-          Exclusive Black Friday ! Offer <span class="span skewBg">10</span> Days
-        </div>
-        <div class="social-wrapper">
-          <p class="social-title">Follow us on :</p>
-          <ul class="social-list">
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-pinterest"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>-->
 
     <div class="header-bottom skewBg" data-header>
       <div class="container">
@@ -98,14 +66,6 @@
       </div>
     </div>
   </header>
-
-
-
-
-
-
-
-
 
 
   <main>
@@ -281,59 +241,60 @@
       <!-- 
         - #SHOP
       -->
-      <!--<section class="section shop" id="shop" aria-label="shop"
+      <section class="section shop" id="shop" aria-label="shop"
         style="background-image: url('./assets/images/footer/shop-bg.jpg')">
         <div class="container">
           <h2 class="h2 section-title">
             Softwear & Tools <span class="span">Corner</span>
           </h2>
           <p class="section-text">
-            Hacks, prank tools, and more.
+            PAID
           </p>
-
           <ul class="has-scrollbar">
             <li class="scrollbar-item">
               <div class="shop-card">
                 <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
-                  <img src="./assets/images/shop/shop-img-1.jpg" width="300" height="260" loading="lazy"
+                  <img src="./assets/images/shop/paid/discord_hack.jpg" width="300" height="260" loading="lazy"
                     alt="Women Black T-Shirt" class="img-cover">
                 </figure>
                 <div class="card-content">
-                  <a href="#" class="card-badge skewBg">t-shirt</a>
+                  <a href="#" class="card-badge skewBg">Discord Hack</a>
                   <h3 class="h3">
-                    <a href="#" class="card-title">Women Black T-Shirt</a>
+                    <a href="#" class="card-title">Nuke / Raid Tool</a>
                   </h3>
                   <div class="card-wrapper">
-                    <p class="card-price">$29.00</p>
-                    <button class="card-btn">
+                    <p class="card-price">R15.00</p>
+                    <button class="card-btn" onclick="handleWhatsAppMessage('Discord Hack', 'R15.00')">
                       <ion-icon name="basket"></ion-icon>
+                      WhatsApp
                     </button>
                   </div>
                 </div>
               </div>
             </li>
-
-            <li class="scrollbar-item">
+          
+           <!-- <li class="scrollbar-item">
               <div class="shop-card">
                 <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
-                  <img src="./assets/images/shop/shop-img-2.jpg" width="300" height="260" loading="lazy"
+                  <img src="./assets/images/shop/assult_cube.jpg" width="300" height="260" loading="lazy"
                     alt="Gears 5 Xbox Controller" class="img-cover">
                 </figure>
                 <div class="card-content">
-                  <a href="#" class="card-badge skewBg">x-box</a>
+                  <a href="#" class="card-badge skewBg">AssultCube</a>
                   <h3 class="h3">
-                    <a href="#" class="card-title">Gears 5 Xbox Controller</a>
+                    <a href="#" class="card-title">Hack menu (1.3.0.2)</a>
                   </h3>
                   <div class="card-wrapper">
-                    <p class="card-price">$29.00</p>
-                    <button class="card-btn">
+                    <p class="card-price">R00.00</p>
+                    <button class="card-btn" onclick="handleWhatsAppMessage('AssultCube', 'R00.00')">
                       <ion-icon name="basket"></ion-icon>
+                      WhatsApp
                     </button>
                   </div>
                 </div>
               </div>
             </li>
-
+          
             <li class="scrollbar-item">
               <div class="shop-card">
                 <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
@@ -347,15 +308,15 @@
                   </h3>
                   <div class="card-wrapper">
                     <p class="card-price">$29.00</p>
-
-                    <button class="card-btn">
+                    <button class="card-btn" onclick="handleWhatsAppMessage('GeForce RTX 2070', '$29.00')">
                       <ion-icon name="basket"></ion-icon>
+                      WhatsApp
                     </button>
                   </div>
                 </div>
               </div>
             </li>
-
+          
             <li class="scrollbar-item">
               <div class="shop-card">
                 <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
@@ -369,21 +330,178 @@
                   </h3>
                   <div class="card-wrapper">
                     <p class="card-price">$29.00</p>
-                    <button class="card-btn">
+                    <button class="card-btn" onclick="handleWhatsAppMessage('Virtual Reality Smiled', '$29.00')">
                       <ion-icon name="basket"></ion-icon>
+                      WhatsApp
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>-->
+
+
+
+          </ul>
+          
+          <script>
+            function handleWhatsAppMessage(productName, price) {
+              const message = `Product: ${productName}\nPrice: ${price}`;
+              const whatsappNumber = "27717311486"; // Replace with your WhatsApp number
+              const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+          
+              // Copy the message to the clipboard
+              navigator.clipboard.writeText(message).then(() => {
+              }).catch(err => {
+              });
+          
+              // Open WhatsApp link
+              window.open(whatsappLink, "_blank");
+            }
+          </script>
+          
+
+        </div>
+      </section>
+
+
+
+      <section class="section shop" id="shop" aria-label="shop"
+        style="background-image: url('./assets/images/footer/shop-bg.jpg')">
+        <div class="container">
+          <p class="section-text">
+            FREE
+          </p>
+          <ul class="has-scrollbar">
+            <li class="scrollbar-item">
+              <div class="shop-card">
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop/free/email_spam.jpg" width="300" height="260" loading="lazy"
+                    alt="Women Black T-Shirt" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <a href="#" class="card-badge skewBg">Email Spam</a>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">1 email account</a>
+                  </h3>
+                  <div class="card-wrapper">
+                    <p class="card-price">R00.00</p>
+                    <button class="card-btn" onclick="handleWhatsAppMessage('1 email account', 'R00.00')">
+                      <ion-icon name="basket"></ion-icon>
+                      WhatsApp
                     </button>
                   </div>
                 </div>
               </div>
             </li>
+          
+            <li class="scrollbar-item">
+              <div class="shop-card">
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop/free/assult_cube.jpg" width="300" height="260" loading="lazy"
+                    alt="Gears 5 Xbox Controller" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <a href="#" class="card-badge skewBg">AssultCube</a>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Hack menu (1.3.0.2)</a>
+                  </h3>
+                  <div class="card-wrapper">
+                    <p class="card-price">R00.00</p>
+                    <button class="card-btn" onclick="handleWhatsAppMessage('AssultCube (1.3.0.2)', 'R00.00')">
+                      <ion-icon name="basket"></ion-icon>
+                      WhatsApp
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          
+            <li class="scrollbar-item">
+              <div class="shop-card">
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop/free/coderx_proxies.jpg" width="300" height="260" loading="lazy"
+                    alt="GeForce RTX 2070" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <a href="#" class="card-badge skewBg">Coderx Proxies</a>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Get proxies</a>
+                  </h3>
+                  <div class="card-wrapper">
+                    <p class="card-price">R00.00</p>
+                    <button class="card-btn" onclick="handleWhatsAppMessage('Coderx Proxies', 'R00.00')">
+                      <ion-icon name="basket"></ion-icon>
+                      WhatsApp
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          
+            <li class="scrollbar-item">
+              <div class="shop-card">
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop/free/fake_info_gen.jpg" width="300" height="260" loading="lazy"
+                    alt="Virtual Reality Smiled" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <a href="#" class="card-badge skewBg">Fake Info Gen</a>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">All in one Info Gen</a>
+                  </h3>
+                  <div class="card-wrapper">
+                    <p class="card-price">R00.00</p>
+                    <button class="card-btn" onclick="handleWhatsAppMessage('Fake Info Gen', 'R00.00')">
+                      <ion-icon name="basket"></ion-icon>
+                      WhatsApp
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="shop-card">
+                <figure class="card-banner img-holder" style="--width: 300; --height: 260;">
+                  <img src="./assets/images/shop/free/wifi_scan.jpg" width="300" height="260" loading="lazy"
+                    alt="Virtual Reality Smiled" class="img-cover">
+                </figure>
+                <div class="card-content">
+                  <a href="#" class="card-badge skewBg">Wifi Info</a>
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Get All Wifi Passwords</a>
+                  </h3>
+                  <div class="card-wrapper">
+                    <p class="card-price">R00.00</p>
+                    <button class="card-btn" onclick="handleWhatsAppMessage('Wifi Info Passwords', 'R00.00')">
+                      <ion-icon name="basket"></ion-icon>
+                      WhatsApp
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
           </ul>
+          <script>
+            function handleWhatsAppMessage(productName, price) {
+              const message = `Product: ${productName}\nPrice: ${price}`;
+              const whatsappNumber = "27717311486"; // Replace with your WhatsApp number
+              const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+          
+              // Copy the message to the clipboard
+              navigator.clipboard.writeText(message).then(() => {
+              }).catch(err => {
+              });
+          
+              // Open WhatsApp link
+              window.open(whatsappLink, "_blank");
+            }
+          </script>
+          
 
         </div>
-      </section>-->
-
-
-
-
+      </section>
 
 
 
