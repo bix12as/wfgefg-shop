@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortnite Order System</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+body {
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.order-form {
+  background: rgba(46, 46, 46, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 15px #00ffaa;
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.order-form h2 {
+  margin-bottom: 20px;
+  color: #00ffaa;
+  font-size: 28px;
+  text-shadow: 0 0 10px #00ffaa;
+}
+
+.order-form input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #1c1c1c;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.order-form input:focus {
+  border: 2px solid #00ffaa;
+  box-shadow: 0 0 20px #00ffaa;
+}
+
+.order-form button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #00ffaa, #0077ff);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.order-form button:hover {
+  background: linear-gradient(135deg, #0077ff, #00ffaa);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px #00ffaa, 0 0 30px #0077ff;
+}
+
+.terms-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+.terms-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #00ffaa;
+}
+
+.terms-label a {
+  color: #00ffaa;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.terms-label a:hover {
+  color: #0088cc;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 20px;
+  }
+
+  .order-form {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .order-form h2 {
+    font-size: 24px;
+  }
+
+  .order-form input,
+  .order-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .terms-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-form {
+    padding: 15px;
+  }
+
+  .order-form h2 {
+    font-size: 20px;
+  }
+
+  .order-form input,
+  .order-form button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .terms-label {
+    font-size: 11px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .terms-label input[type="checkbox"] {
+    margin-bottom: 5px;
+  }
+}
+
+  </style>
+  
+</head>
+<body>
+    <div class="order-form">
+      <h2>Fortnite Bot Lobby Order</h2>
+      <input type="text" id="username" placeholder="Enter your Fortnite username" required>
+      <input type="number" id="games" placeholder="How many games?" min="1" required>
+      
+      <label class="terms-label">
+        <input type="checkbox" id="terms" required>
+        <span>I agree to the <a href="#" onclick="openModal()">terms and conditions</a></span>
+      </label>
+      
+      <button onclick="sendOrder()">Send Order</button>
+      <p style="margin-top: 20px; font-size: 14px; color: #aaa;">Payment via <strong>Yoco Credit Card</strong>. You will receive a payment link.</p>
+    </div>
+  
+    <!-- Modal Popup -->
+    <div id="termsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Terms and Conditions</h3>
+        <p><strong>1. Service Description</strong><br>By placing an order, you agree to purchase a service for Fortnite bot lobbies. This service is for entertainment purposes only.</p>
+        <p><strong>2. No Refund Policy</strong><br>All sales are final. Once the service has been delivered or confirmed, no refunds will be issued.</p>
+        <p><strong>3. Payment</strong><br>Payment is required upfront via Yoco credit card link. Failure to complete the payment will result in order cancellation.</p>
+        <p><strong>4. Order Confirmation</strong><br>Orders will only be processed once payment has been received and confirmed.</p>
+        <p><strong>5. Service Delivery</strong><br>The service will be provided based on the details you submit. We are not responsible for any errors in the information provided by the customer.</p>
+        <p><strong>6. Liability</strong><br>We are not liable for any account restrictions, bans, or losses resulting from the use of this service.</p>
+        <p><strong>7. Privacy Policy</strong><br>We respect your privacy. Any information you provide will be kept confidential and used only for order processing.</p>
+        <p><strong>8. Right to Refuse Service</strong><br>We reserve the right to refuse service to anyone at our sole discretion.</p>
+        <p><strong>9. Changes to Terms</strong><br>We reserve the right to modify these terms at any time. It is your responsibility to review them periodically.</p>
+      </div>
+    </div>
+  
+    <script>
+      function openModal() {
+        document.getElementById('termsModal').style.display = 'block';
+      }
+  
+      function closeModal() {
+        document.getElementById('termsModal').style.display = 'none';
+      }
+  
+      function sendOrder() {
+        const username = document.getElementById('username').value;
+        const games = document.getElementById('games').value;
+        const terms = document.getElementById('terms').checked;
+  
+        if (!username || !games || games <= 0 || !terms) {
+          alert('Please fill out all fields correctly and accept the terms.');
+          return;
+        }
+  
+        const payment = games * 1.50; // R1,50 per game
+        const now = new Date();
+        const orderDate = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        const orderTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+  
+        const message = `Fortnite Order:\n\nUsername: ${username}\nGames: ${games}\nTotal Payment: R${payment}\nOrder Date: ${orderDate} - ${orderTime}\n\nYou Will Be On Wait List.\n\n Thank u for using CODERX`;
+  
+        const whatsappLink = `https://wa.me/27717311486?text=${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank');
+      }
+    </script>
+  
+    <style>
+      body {
+        background: #1a1a1a;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .order-form {
+        background: #2e2e2e;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
+      .order-form h2 {
+        margin-bottom: 20px;
+        color: #00aaff;
+      }
+      .order-form input,
+      .order-form button {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      .order-form input {
+        background: #1c1c1c;
+        color: #fff;
+      }
+      .order-form button {
+        background: #00aaff;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .order-form button:hover {
+        background: #0088cc;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(0, 0, 0, 0.8);
+      }
+      .modal-content {
+        background: #2e2e2e;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 600px;
+        color: #fff;
+      }
+      .modal-content h3 {
+        color: #00ffaa;
+      }
+      .modal-content p {
+        margin: 10px 0;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .close:hover {
+        color: #fff;
+      }
+    </style>
+  </body>
+  
+  
+</html>
